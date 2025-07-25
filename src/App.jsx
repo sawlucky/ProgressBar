@@ -1,22 +1,25 @@
-// import React from "react";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ProgressBar from "./Components/ProgressBar";
+// import React from 'react'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AdminPanel from './Components/AdminPannel';
+import ErrorPage from "./Components/ErrorPage";
 const App = () => {
-  //   const appRouter = createBrowserRouter([
-  //     {
-  //       path: "/",
-  //       element: <ProgressBar data={70} />,
-  //     },
-  //   ]);
-  const barPercentage = [0, 3, 4, 5, 20, 50, 80, 90, 100];
+    const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <AdminPanel />,
+        },
+        {
+            path: "*",
+            element:<ErrorPage/>
+        }
+    ])
   return (
-    <div className="text-center">
-      progress bar
-      {barPercentage.map((value) => (
-        <ProgressBar key={value} data={value} />
-      ))}
+    <div>
+      <div>
+        <RouterProvider router={appRouter} />
+      </div>
     </div>
   );
-};
+}
 
-export default App;
+export default App

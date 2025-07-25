@@ -1,15 +1,23 @@
 /** @type {import('tailwindcss').Config} */
-export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
-export const theme = {
-  extend: {
-    fontFamily: {
-      customFont: ["Roboto", "sans-serif"],
-      sans: ["Helvetica", "Arial", "sans-serif"], // Custom font family
-    },
-    colors: {
-      yellowCustom: "#FFD700", // Custom yellow color
-      lightOrange: "#FFA500", // Custom light orange color
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        space: ["Space Grotesk", "sans-serif"],
+        nunito: ["Nunito Sans", "sans-serif"],
+        ralewaydots: ['"Raleway Dots"', "cursive"],
+      },
+      animation: {
+        marquee: "marquee 10s linear infinite alternate",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
+  plugins: [],
 };
-export const plugins = [];
